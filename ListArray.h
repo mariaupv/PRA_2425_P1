@@ -14,6 +14,12 @@ class ListArray : public List<T> {
 		int n; //num elementos del array
 		static const int MINSIZE = 2;
 		void resize(int new_size){
+			if(new_size <= 0){
+				throw invalid_argument("El tamaño del vector tiene que ser mayor que 0.\n");
+			}
+			if(new_size == max){
+				return;
+			}
 			T* array = new T[new_size];
 			for(int i = 0; i < max; i++){
 				array[i] = arr[i];
@@ -21,6 +27,7 @@ class ListArray : public List<T> {
 			delete[] arr;
 			arr = array;
 			max = new_size;
+
 		}
 
 	public:
@@ -34,27 +41,37 @@ class ListArray : public List<T> {
 			delete[] arr;
 		} 
 
-			
-		friend ostream& operator<<(ostream &out, const ListArray<T> &list){
-			for(int i = 0; i < list.n; i++){
-				out << list.arr[i] << endl;
-			}
-			return out;
-		}
-
-		T& operator[](int pos){
+		T operator[](int pos){
 			if (pos < 0 || pos >= n){
 				throw  out_of_range("Posición fuera de rango.\n");
 			}
 			return arr[pos];
 		}
+
+		friend ostream& operator<<(ostream &out, const ListArray<T> &list){
+			out << "List => [ ";
+			if(list.n == 0){
+				out << "]";
+			}else{
+				for(int i = 0; i < list.n; i++){
+					out << list.arr[i];
+					if (i < list.n -1){
+						out << "\n ";
+					}
+				}
+				out << "\n]";
+			}
+			return out;
+		}
+
+		
 		
 		void insert(int pos, T e)override {
 			if(pos < 0 || pos > n){
                 throw out_of_range("La posicion no es valida");
         	}
         	if(n == max){
-                resize(2*max);
+                resize(max == 0 ? 1 : 2*max);//si max 0, se cambia a 1
         	}
         	for(int i = n-1; i >= pos; i--){
                 arr[i+1] = arr[i];
