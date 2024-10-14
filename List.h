@@ -14,7 +14,7 @@ class List{
 
 		virtual T get(int pos) = 0; //devuelve elemento situado en pos
 
-		virtual int search (T e) = 0; //devuelve pos encuentra primera vez e
+		virtual int search (T e) = 0; //devuelve pos cuando encuentra por primera vez e
 
 		virtual bool empty() = 0; //indica si lista está vacía
 
