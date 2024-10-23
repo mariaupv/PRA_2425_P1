@@ -10,9 +10,9 @@
 	}
 
 	double Point2D::distance(const Point2D &a, const Point2D &b){
-		int uno = pow(a.x - b.x, 2);
-		int dos = pow(a.y - b.y, 2);
-		int d = sqrt(uno + dos);
+		double uno = pow(a.x - b.x, 2);
+		double dos = pow(a.y - b.y, 2);
+		double d = sqrt(uno + dos);
 		return d;
 	}
 
