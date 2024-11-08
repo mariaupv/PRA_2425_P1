@@ -5,7 +5,7 @@ using namespace std;
 #define PI 3.1416
 
 Circle::Circle(){//constructor por defecto->color def, centro(0,0) y radio 1
-    center.x = 0;
+    center.x = 0; 
     center.y = 0;
     radius = 1;
 }
