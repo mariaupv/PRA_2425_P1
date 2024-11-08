@@ -8,7 +8,7 @@ class Circle : public Shape{
         double radius;
     
     public:
-        Circle();
+        Circle(); // Crea círculo por defecto
         Circle(string color, Point2D center, double radius);
         Point2D get_center() const;
         void set_center(Point2D p);
