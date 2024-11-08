@@ -3,7 +3,7 @@
 using namespace std;
 
 class Circle : public Shape{
-    private :
+    private :  
         Point2D center;
         double radius;
     
