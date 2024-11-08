@@ -7,7 +7,7 @@ Shape::Shape(){
     color = "red";
 }
 Shape::Shape(string color){
-    if(color == "rojo" || color == "verde" || color == "azul"){
+    if(color == "red" || color == "green" || color == "blue"){
         this -> color = color;
     }else{
         throw invalid_argument("Color no válido.\n");
@@ -20,8 +20,8 @@ string Shape::get_color() const{
 }
 
 void Shape::set_color(string c){
-    if(c == "rojo" || c == "verde" || c == "azul"){
-        c = color;
+    if(c == "red" || c == "green" || c == "blue"){
+        color = c;
     }else{
         throw invalid_argument("El color no es valido.\n");
     }
