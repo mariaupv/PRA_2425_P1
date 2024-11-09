@@ -28,7 +28,7 @@ Rectangle::Rectangle(){//vértices: v0=(-1,0.5); v1=(1,0.5), v2=(1,-0.5), y v3=(
     vs[3].y = -0.5;
 }
 Rectangle::Rectangle(string color, Point2D* vertices){
-    vs = new Point2D[4];//ESTO LO HE CAMBIADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    vs = new Point2D[4];
     bool rect = check(vertices);
     if(rect == true){
         this->color = color;
