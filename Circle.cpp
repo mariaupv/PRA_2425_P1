@@ -33,7 +33,7 @@ ostream& operator<< (ostream &out, const Circle &c){
 } 
         
 double Circle::area()const{
-    int area = PI * pow(radius,2);
+    double area = PI * pow(radius,2);
     return area;
 }
 double Circle::perimeter()const{

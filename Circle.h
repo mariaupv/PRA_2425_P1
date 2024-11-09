@@ -1,3 +1,7 @@
+#ifndef _CIRCLE_H
+#define _CIRCLE_H
+
+
 #include <iostream>
 #include "Shape.h"
 using namespace std;
@@ -21,3 +25,5 @@ class Circle : public Shape{
         void translate(double incx, double incY) override;
         void print() override;
 };
+
+#endif
